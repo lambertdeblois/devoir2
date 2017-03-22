@@ -59,7 +59,7 @@ class Cours
   # Ordonne les cours selon le sigle.
   #
   def <=>( autre )
-    #autre.sigle <=> sigle #po sur
+    sigle <=> autre.sigle
   end
 
   #
@@ -67,7 +67,7 @@ class Cours
   #
   def desactiver
     DBC.require( actif?, "Cours pas actif: #{self}" )
-    self.actif = false  
+    self.actif = false
     # A COMPLETER.
   end
 
