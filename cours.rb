@@ -26,6 +26,7 @@ class Cours
       DBC.require( x.kind_of?(Symbol) && /^#{Motifs::SIGLE}$/ =~ x,
                   "Prealable incorrect: #{x}")
     end
+    @sigle, @titre, @nb_credits, @prealables, @actif = sigle, titre, nb_credits, prealables, actif
     # A COMPLETER.
   end
 
@@ -66,7 +67,7 @@ class Cours
   #
   def desactiver
     DBC.require( actif?, "Cours pas actif: #{self}" )
-
+    self.actif = false  
     # A COMPLETER.
   end
 
@@ -75,7 +76,7 @@ class Cours
   #
   def activer
     DBC.require( !actif?, "Cours deja actif: #{self}" )
-
+    self.actif = true
     # A COMPLETER.
   end
 
@@ -83,7 +84,7 @@ class Cours
   # Determine si le cours est actif ou non.
   #
   def actif?
-    true
+    self.actif
     # A COMPLETER.
   end
 end
