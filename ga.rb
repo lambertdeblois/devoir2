@@ -23,7 +23,7 @@ DEPOT_DEFAUT = '.cours.txt'
 
 # Pour generer ou non des traces de debogage avec la function debug,
 # il suffit d'ajouter/retirer '#' devant '|| true'.
-DEBUG=false #|| true
+DEBUG=false || true
 
 def debug( *args )
   return unless DEBUG
@@ -83,15 +83,20 @@ end
 ###################################################
 
 def definir_depot
-  # A COMPLETER!
+  argument_1, *reste = ARGV
+  if argument_1 =~ Regexp.new(Motifs::DEPOT)
+    ARGV.shift
+    depot = argument_1.split('=')[-1]
+  end
   depot ||= DEPOT_DEFAUT
 
   depot
 end
 
 def init( depot )
-  # A COMPLETER!
-
+  detruire = ARGV[0] =~ Regexp.new(Motifs::DETRUIRE)
+  p ARGV
+  p detruire
   if File.exists? depot
     if detruire
       FileUtils.rm_f depot # On detruit le depot existant si --detruire est specifie.

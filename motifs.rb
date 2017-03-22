@@ -13,6 +13,8 @@ module Motifs
   TITRE = %r{}
   NOMBRE = %r{}
   PREALABLES = %r{}
+  DEPOT = %r{--depot\s*=.+}
+  DETRUIRE = %r{\s*--detruire}
 
   # Motif pour un cours complet
   COURS = %r{}
