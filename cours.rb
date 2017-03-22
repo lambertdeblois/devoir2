@@ -9,7 +9,11 @@ require_relative 'motifs'
 #
 class Cours
   include Comparable
-
+  attr_accessor :sigle
+  attr_accessor :titre
+  attr_accessor :nb_credits
+  attr_accessor :prealables
+  attr_accessor :actif
 
   def initialize( sigle, titre, nb_credits, *prealables, actif: true )
     DBC.require( sigle.kind_of?(Symbol) && /^#{Motifs::SIGLE}$/ =~ sigle,
@@ -18,9 +22,10 @@ class Cours
                  "Titre vide: '#{titre}'" )
     DBC.require( nb_credits.to_i > 0,
                  "Nb. credits invalides: #{nb_credits}!?" )
-    prealables.each {|x| DBC.require( x.kind_of?(Symbol) &&
-                                      /^#{Motifs::SIGLE}$/ =~ x,
-                                      "Prealable incorrect: #{x}")}
+    prealables.each do |x|
+      DBC.require( x.kind_of?(Symbol) && /^#{Motifs::SIGLE}$/ =~ x,
+                  "Prealable incorrect: #{x}")
+    end
     # A COMPLETER.
   end
 
@@ -53,7 +58,7 @@ class Cours
   # Ordonne les cours selon le sigle.
   #
   def <=>( autre )
-    autre.sigle <=> sigle #po sur
+    #autre.sigle <=> sigle #po sur
   end
 
   #
@@ -78,6 +83,7 @@ class Cours
   # Determine si le cours est actif ou non.
   #
   def actif?
+    true
     # A COMPLETER.
   end
 end
