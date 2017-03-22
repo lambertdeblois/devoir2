@@ -83,10 +83,9 @@ end
 ###################################################
 
 def definir_depot
-  argument_1, *reste = ARGV
-  if argument_1 =~ Regexp.new(Motifs::DEPOT)
+  if ARGV[0] =~ Regexp.new(Motifs::DEPOT)
+    depot = ARGV[0].split('=')[-1]
     ARGV.shift
-    depot = argument_1.split('=')[-1]
   end
   depot ||= DEPOT_DEFAUT
 
@@ -94,9 +93,8 @@ def definir_depot
 end
 
 def init( depot )
-  detruire = ARGV[0] =~ Regexp.new(Motifs::DETRUIRE)
-  p ARGV
-  p detruire
+  (detruire = ARGV.shift) if ARGV[0] =~ Regexp.new(Motifs::DETRUIRE)
+
   if File.exists? depot
     if detruire
       FileUtils.rm_f depot # On detruit le depot existant si --detruire est specifie.
