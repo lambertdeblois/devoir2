@@ -18,7 +18,9 @@ class Cours
                  "Titre vide: '#{titre}'" )
     DBC.require( nb_credits.to_i > 0,
                  "Nb. credits invalides: #{nb_credits}!?" )
-
+    prealables.each {|x| DBC.require( x.kind_of?(Symbol) &&
+                                      /^#{Motifs::SIGLE}$/ =~ x,
+                                      "Prealable incorrect: #{x}")}
     # A COMPLETER.
   end
 
@@ -51,7 +53,7 @@ class Cours
   # Ordonne les cours selon le sigle.
   #
   def <=>( autre )
-    # A COMPLETER.
+    autre.sigle <=> sigle #po sur
   end
 
   #
