@@ -167,7 +167,16 @@ def ajouter( les_cours )
 end
 
 def nb_credits( les_cours )
-  [les_cours, nil] # A MODIFIER/COMPLETER!
+  res = 0
+  while ARGV.length != 0 do
+    intermediaire = 0
+    intermediaire = intermediaire + les_cours.reduce(0) { |res, cour| cour.sigle.to_s == ARGV[0] ? cour.nb_credits : res}
+    erreur "Aucun cours #{ARGV[0]}" if intermediaire == 0
+    res = res + intermediaire
+    ARGV.shift
+  end
+  res = res.to_s + "\n"
+  [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
 def supprimer( les_cours )
