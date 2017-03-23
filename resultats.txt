@@ -1,0 +1,333 @@
+++ RESULTATS DES TESTS ++
+-- ruby Tests/ajouter_test.rb
+Run options: --seed 17281
+
+# Running:
+
+FFFF.FFFFFFFFF.F
+
+Finished in 0.825282s, 19.3873 runs/s, 94.5131 assertions/s.
+
+  1) Failure:
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Prealable.*invalide/ to match "*** Erreur: Argument(s) en trop: 'INF2160 Paradigmes de programmation 3 INF2120 INF2100'".
+
+
+  2) Failure:
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0001_ajoute un cours s'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF3143 Modelisation et specification formelle 3 INF1130 INF2120'", ""] to be empty.
+
+
+  3) Failure:
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'un prealable est incorrect [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Prealable.*invalide/ to match "*** Erreur: Argument(s) en trop: 'INF2160 Paradigmes de programmation 3 INF2120 INF200'".
+
+
+  4) Failure:
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0004_signale une erreur lorsqu'le cours existe deja [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /meme sigle existe/ to match "*** Erreur: Argument(s) en trop: 'INF1130 Mathematiques 3'".
+
+
+  5) Failure:
+GestionAcademique::ajouter#test_0001_ajoute dans un fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF1120 Programmation I 3'", ""] to be empty.
+
+
+  6) Failure:
+GestionAcademique::ajouter#test_0003_signale une erreur lorsque le sigle est invalide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Sigle.*incorrect/ to match "*** Erreur: Argument(s) en trop: 'INF120 Programmation I 3 INF0000 XXX'".
+
+
+  7) Failure:
+GestionAcademique::ajouter#test_0004_signale une erreur lorsqu'un prealable est invalide au niveau du sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Sigle.*incorrect/ to match "*** Erreur: Argument(s) en trop: 'INF1120 Programmation I 3 IF0000'".
+
+
+  8) Failure:
+GestionAcademique::ajouter#test_0005_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Prealable.*invalide/ to match "*** Erreur: Argument(s) en trop: 'INF1120 Programmation I 3 INF1000'".
+
+
+  9) Failure:
+GestionAcademique::ajouter#test_0006_signale une erreur lorsqu'un prealable est invalide parce qu'inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Prealable.*invalide/ to match "*** Erreur: Argument(s) en trop: 'INF1120 Programmation I 3 INF3143'".
+
+
+ 10) Failure:
+GestionAcademique::ajout de cours specifie sur stdin#test_0003_ajoute plusieurs cours lorsqu'ils n'existent pas [Tests/ajouter_test.rb:207]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"INF3143,Modelisation et specification formelle,3,INF1130:INF2120,ACTIF"
++"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF"
+
+
+
+ 11) Failure:
+GestionAcademique::ajout de cours specifie sur stdin#test_0004_n'ajoute rien si un des cours specifie a des erreurs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:113]:
+Expected 0 to not be equal to 0.
+
+
+ 12) Failure:
+GestionAcademique::ajout de cours specifie sur stdin#test_0002_ajoute un cours avec des prealables lorsqu'il n'existe pas [Tests/ajouter_test.rb:177]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"INF3143,Modelisation et specification formelle,3,INF1130:INF2120,ACTIF"
++"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF"
+
+
+
+ 13) Failure:
+GestionAcademique::ajout de cours specifie sur stdin#test_0001_ajoute un cours sans prealable lorsqu'il n'existe pas [Tests/ajouter_test.rb:155]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"INF1000,Introduction a l'informatique,3,,ACTIF"
++"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF"
+
+
+
+ 14) Failure:
+GestionAcademique::ajouter::banque de cours autre que celui par defaut#test_0002_ajoute un cours lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF3143 Modelisation et specification formelle 3 INF1130 INF2120'", ""] to be empty.
+
+16 runs, 78 assertions, 14 failures, 0 errors, 0 skips
+-- ruby Tests/desactiver_reactiver_test.rb
+Run options: --seed 5361
+
+# Running:
+
+FFFFF.
+
+Finished in 0.322902s, 18.5815 runs/s, 102.1983 assertions/s.
+
+  1) Failure:
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF1120'", ""] to be empty.
+
+
+  2) Failure:
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0001_signale une erreur lorsque le sigle est deja inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /deja inactif.*MAT3140/i to match "*** Erreur: Argument(s) en trop: 'MAT3140'".
+
+
+  3) Failure:
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours#test_0001_signalent une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Aucun cours.*INF9999/ to match "*** Erreur: Argument(s) en trop: 'INF9999'".
+
+
+  4) Failure:
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0001_signale une erreur lorsque le sigle est deja actif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /deja actif.*INF1120/i to match "*** Erreur: Argument(s) en trop: 'INF1120'".
+
+
+  5) Failure:
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'MAT3140'", ""] to be empty.
+
+6 runs, 33 assertions, 5 failures, 0 errors, 0 skips
+-- ruby Tests/init_test.rb
+Run options: --seed 170
+
+# Running:
+
+........
+
+Finished in 0.395690s, 20.2178 runs/s, 121.3070 assertions/s.
+
+8 runs, 48 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/lister_test.rb
+Run options: --seed 23541
+
+# Running:
+
+.........
+
+Finished in 0.449890s, 20.0049 runs/s, 86.6878 assertions/s.
+
+9 runs, 39 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/nb_credits_test.rb
+Run options: --seed 18498
+
+# Running:
+
+FFF
+
+Finished in 0.136716s, 21.9434 runs/s, 51.2012 assertions/s.
+
+  1) Failure:
+GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0002_retourne la somme des credits lorsqu'il y a plusieurs sigles [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+Expected: ["9"]
+  Actual: []
+
+
+  2) Failure:
+GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Aucun cours.*INF1111/ to match "*** Erreur: Argument(s) en trop: 'INF1130 INF1111 INF3135'".
+
+
+  3) Failure:
+GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0001_retourne 0 lorsqu'aucun sigle indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+Expected: ["0"]
+  Actual: []
+
+3 runs, 7 assertions, 3 failures, 0 errors, 0 skips
+-- ruby Tests/prealables_test.rb
+Run options: --seed 53707
+
+# Running:
+
+FFFF.F
+
+Finished in 0.315605s, 19.0111 runs/s, 53.8648 assertions/s.
+
+  1) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120", "INF1130", "INF2120"]
++[]
+
+
+
+  2) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF1120'", ""] to be empty.
+
+
+  3) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+Expected: ["INF1130", "INF2120"]
+  Actual: []
+
+
+  4) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours dont plusieurs prealables indirects#test_0001_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120", "INF1130", "INF2120", "INF3105", "INF3135", "INF4100", "INF7341"]
++[]
+
+
+
+  5) Failure:
+GestionAcademique::prealables#test_0002_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Aucun cours.*XXX000/ to match "*** Erreur: Argument(s) en trop: 'XXX0000'".
+
+6 runs, 17 assertions, 5 failures, 0 errors, 0 skips
+-- ruby Tests/supprimer_test.rb
+Run options: --seed 34490
+
+# Running:
+
+.FF.FF
+
+Finished in 0.297791s, 20.1483 runs/s, 90.6675 assertions/s.
+
+  1) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0003_supprime le cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF2120'", ""] to be empty.
+
+
+  2) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0001_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Aucun cours.*INF9999/ to match "*** Erreur: Argument(s) en trop: 'INF9999'".
+
+
+  3) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0004_supprime les divers cours specifies via stdin [Tests/supprimer_test.rb:60]:
+Expected "INF1120,Programmation I,3,,ACTIF" to be nil.
+
+
+  4) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0005_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:113]:
+Expected 0 to not be equal to 0.
+
+6 runs, 27 assertions, 4 failures, 0 errors, 0 skips
+-- ruby Tests/trouver_test.rb
+Run options: --seed 31994
+
+# Running:
+
+F..FFFFFFF
+
+Finished in 0.503931s, 19.8440 runs/s, 39.6880 assertions/s.
+
+  1) Failure:
+GestionAcademique::trouver#test_0002_retourne rien lorsque fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: '.'", ""] to be empty.
+
+
+  2) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++[]
+
+
+
+  3) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
++[]
+
+
+
+  4) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affiche tous les cours selon le format indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 => 'Programmation I' (3 cr.)", "INF1130 => 'Mathematiques pour informaticien' (3 cr.)", "INF2120 => 'Programmation II' (3 cr.)", "INF3105 => 'Structures de donnees et algorithmes' (3 cr.)", "INF3135 => 'Construction et maintenance de logiciels' (3 cr.)"]
++[]
+
+
+
+  5) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
++[]
+
+
+
+  6) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0004_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++[]
+
+
+
+  7) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0006_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de titre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["MAT3140? \"Algebre et logique\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF1120 \"Programmation I\" ()", "INF2120 \"Programmation II\" (INF1120)"]
++[]
+
+
+
+  8) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0002_trouve toutes les lignes avec n'importe quoi [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
++[]
+
+
+10 runs, 20 assertions, 8 failures, 0 errors, 0 skips

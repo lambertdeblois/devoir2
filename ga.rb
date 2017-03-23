@@ -23,7 +23,7 @@ DEPOT_DEFAUT = '.cours.txt'
 
 # Pour generer ou non des traces de debogage avec la function debug,
 # il suffit d'ajouter/retirer '#' devant '|| true'.
-DEBUG=false || true
+DEBUG=false #|| true
 
 def debug( *args )
   return unless DEBUG
@@ -141,7 +141,25 @@ end
 #################################################################
 
 def lister( les_cours )
-  [les_cours, nil] # A MODIFIER/COMPLETER!
+  return [les_cours, nil] if les_cours.empty?
+  le_format = nil
+  sep = CoursTexte::SEPARATEUR_PREALABLES
+  if ARGV[0] =~ Regexp.new(Motifs::FORMAT)
+    le_format = ARGV[0].partition('=').last
+    ARGV.shift
+  end
+  if ARGV[0] =~ Regexp.new(Motifs::SEP)
+    sep = ARGV[0].partition('=').last
+    ARGV.shift
+  end
+  if ARGV[0] =~ Regexp.new(Motifs::AVEC_INACTIFS)
+    res = les_cours
+    ARGV.shift
+  else
+    res = les_cours.select{ |cour| cour.actif? }
+  end
+  res = (res.sort{ |a, b| a <=> b }).map{ |cour| cour.to_s(le_format, sep)}.join("\n") << "\n"
+  [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
 def ajouter( les_cours )
@@ -234,6 +252,5 @@ begin
     print resultat if resultat   # Note: print n'ajoute pas de saut de ligne!
     sauver_les_cours( depot, les_cours )
   end
-
   erreur "Argument(s) en trop: '#{ARGV.join(' ')}'" unless ARGV.empty?
 end

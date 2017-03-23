@@ -15,6 +15,9 @@ module Motifs
   PREALABLES = %r{((\b[A-Z]{3}[0-9]{3}[A-Z0-9]\b) *)+}
   DEPOT = %r{--depot\s*=.+}
   DETRUIRE = %r{\s*--detruire}
+  FORMAT = %r{--format\s*=.+}
+  SEP = %r{--separateur_prealables\s*=.+}
+  AVEC_INACTIFS = %r{--avec_inactifs}
 
   # Motif pour un cours complet
   COURS = %r{
