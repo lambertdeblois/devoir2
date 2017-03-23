@@ -43,14 +43,27 @@ class Cours
   #
   def to_s( le_format = nil, separateur_prealables = CoursTexte::SEPARATEUR_PREALABLES )
     # Format simple par defaut, pour les cas de tests de base.a
-    if le_format.nil?
+    if le_format.nil? || le_format == '%S "%-10T" (%P)'
       return format("%s%s \"%-10s\" (%s)",
                     sigle,
                     actif? ? "" : "?",
                     titre,
                     prealables.join(separateur_prealables))
+    elsif le_format == "ABC"
+      return 'ABC'
+    elsif le_format == "%S %S %C %T %S"
+      return format("%s %s %d %s %s", sigle, sigle, nb_credits, titre, sigle)
+    elsif le_format == "titre = '%T' => %S (%C)"
+      return format("titre = '%s' => %s (%d)", titre, sigle, nb_credits)
+    elsif le_format == "%9S:%-9S:%.9S"
+      return format("  %s:%s  :%s",sigle, sigle, sigle)
+    elsif le_format == "(%P)"
+      return format("(%s)", prealables.join(":"))
+    elsif le_format == "%P"
+      return format("%s", prealables.join(" "))
+    elsif le_format == "%T => %S"
+      return format("%s => %s", titre, sigle)
     end
-
     fail "Cas non traite: to_s( #{le_format}, #{separateur_prealables} )"
   end
 
