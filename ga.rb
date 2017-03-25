@@ -165,6 +165,18 @@ def lister( les_cours )
 end
 
 def ajouter( les_cours )
+  if !ARGV[0]
+    # lire argf
+    # pour chaque ligne, cheker format de tout.  si erreur, arrete tout
+    # met tous les cours dans res
+  else
+    # cheker ligne
+    # met ARGV dans res
+  end
+
+    # res.map { |ligne| nouveaucour(ligne) }
+    # ajouter le tout a les_cours
+
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
@@ -186,9 +198,7 @@ def supprimer( les_cours )
   if !ARGV[0]
     res = ARGF.read
     res = res.strip.delete!("\n").split
-    for cour in res do
-      ARGV << cour
-    end
+    res.map{ |cour| ARGV << cour }    
   end
 
   while ARGV.length != 0 do

@@ -1,4 +1,5 @@
 require_relative 'test_helper'
+require_relative '../cours-texte'
 
 describe "GestionAcademique" do
   describe "deactiver et reactiver" do
