@@ -172,7 +172,7 @@ def nb_credits( les_cours )
     intermediaire = 0
     intermediaire = intermediaire + les_cours.reduce(0) { |res, cour| cour.sigle.to_s == ARGV[0] ? cour.nb_credits : res}
     erreur "Aucun cours #{ARGV[0]}" if intermediaire == 0
-    res = res + intermediaire
+    res = res intermediaire
     ARGV.shift
   end
   res = res.to_s + "\n"
@@ -188,10 +188,18 @@ def trouver( les_cours )
 end
 
 def desactiver( les_cours )
+  res = les_cours.find { |l| l.sigle.to_s =~ /#{ARGV[0]}/ }
+  erreur "Aucun cours #{ARGV[0]}" unless res
+  res.desactiver
+  ARGV.shift
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
 def reactiver( les_cours )
+  res = les_cours.find { |l| l.sigle.to_s =~ /#{ARGV[0]}/ }
+  erreur "Aucun cours #{ARGV[0]}" unless res
+  res.activer
+  ARGV.shift
   [les_cours, nil]
 end
 
