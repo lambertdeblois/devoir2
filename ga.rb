@@ -158,7 +158,9 @@ def lister( les_cours )
   else
     res = les_cours.select{ |cour| cour.actif? }
   end
-  res = (res.sort{ |a, b| a <=> b }).map{ |cour| cour.to_s(le_format, sep)}.join("\n") << "\n"
+  res = (res.sort{ |a, b| a <=> b })
+            .map{ |cour| cour.to_s(le_format, sep)}
+            .join("\n") << "\n"
   [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
@@ -172,7 +174,7 @@ def nb_credits( les_cours )
     intermediaire = 0
     intermediaire = intermediaire + les_cours.reduce(0) { |res, cour| cour.sigle.to_s == ARGV[0] ? cour.nb_credits : res}
     erreur "Aucun cours #{ARGV[0]}" if intermediaire == 0
-    res = res intermediaire
+    res = res + intermediaire
     ARGV.shift
   end
   res = res.to_s + "\n"
@@ -180,6 +182,23 @@ def nb_credits( les_cours )
 end
 
 def supprimer( les_cours )
+  erreur "Argument en trop" if ARGV.length > 1
+  if !ARGV[0]
+    res = ARGF.read
+    res = res.strip.delete!("\n").split
+    for cour in res do
+      ARGV << cour
+    end
+  end
+
+  while ARGV.length != 0 do
+    erreur "Format incorrect #{ARGV[0]}" unless ARGV[0] =~ Regexp.new(Motifs::SIGLE)
+    res = les_cours.find { |l| l.sigle.to_s =~ /#{ARGV[0]}/ }
+    erreur "Aucun cours #{ARGV[0]}" unless res
+    res = Array(res)
+    les_cours = les_cours - res
+    ARGV.shift
+  end
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
