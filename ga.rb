@@ -164,16 +164,30 @@ def lister( les_cours )
   [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
-def ajouter( les_cours )
-  if !ARGV[0]
-    # lire argf
-    # pour chaque ligne, cheker format de tout.  si erreur, arrete tout
-    # met tous les cours dans res
-  else
-    # cheker ligne
-    # met ARGV dans res
-  end
 
+def assert_ligne( ligne )
+  erreur "Ligne mal formatee" unless ligne =~ Regexp.new(Motifs::COURS)
+end
+
+def ajouter( les_cours )
+  res = Array.new
+  if !ARGV[0]
+    ARGF.each do |ligne|
+      assert_ligne(ligne)
+      res << ligne.strip
+    end
+  elsif ARGV.length > 2
+    res << ARGV[0]; ARGV.shift
+    res << "\"#{ARGV[0]}\""; ARGV.shift
+    res << ARGV[0]; ARGV.shift
+    while ARGV.length != 0 do
+      res << ARGV[0]; ARGV.shift
+    end
+    res = res.join(' ')
+    assert_ligne(res)
+    res = Array(res)
+  end
+  p res
     # res.map { |ligne| nouveaucour(ligne) }
     # ajouter le tout a les_cours
 
@@ -198,7 +212,7 @@ def supprimer( les_cours )
   if !ARGV[0]
     res = ARGF.read
     res = res.strip.delete!("\n").split
-    res.map{ |cour| ARGV << cour }    
+    res.map{ |cour| ARGV << cour }
   end
 
   while ARGV.length != 0 do
