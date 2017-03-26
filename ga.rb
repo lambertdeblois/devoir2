@@ -184,20 +184,30 @@ def ajouter( les_cours )
       res << ARGV[0]; ARGV.shift
     end
     res = res.join(' ')
-    assert_ligne(res)
+    #assert_ligne(res)
     res = Array(res)
   end
+  bon_cours = Array.new
   res.each do |ligne|
-    ligne = ligne.gsub(/ \"(.+)\" /, ',\1,')
-    ligne = ligne.gsub(/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ',\1')
+    # formatage pour pouvoir creer le cours
+    ligne = ligne.gsub(/ \"(.+)\" ([0-9]+)/, ',\1,\2,')
+    ligne = ligne.gsub(/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ':\1')
+    ligne = ligne.gsub(/,:/, ',')
     ligne = ligne + ",ACTIF\n"
     ligne = ligne.gsub(/(,[0-9])(,ACTIF\n)/, '\1,\2')
-    p ligne
+    # creer le cour avec la ligne
     cour = CoursTexte.creer_cours( ligne )
-    # cheker si les prealables sont des cours actif
+    # check si le cour existe deja
+    resultat = les_cours.find { |cours| cours.sigle.to_s == cour.sigle.to_s }
+    erreur "meme sigle existe" if resultat
+    # check si les prealables existent et sont actifs
+    cour.prealables.each do |prea|
+      resultat = les_cours.find { |cours| cours.sigle.to_s == prea.to_s && cours.actif? }
+      erreur "Prealable invalide #{prea}" unless resultat
+    end
+    bon_cours << cour
   end
-    # res.map { |ligne| nouveaucour(ligne) }
-    # ajouter le tout a les_cours
+  les_cours = les_cours + bon_cours
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
