@@ -113,6 +113,7 @@ def charger_les_cours( depot )
   # On lit les cours du fichier.
   IO.readlines( depot ).map do |ligne|
     # On ignore le saut de ligne avec chomp.
+    p ligne
     CoursTexte.creer_cours( ligne )
   end
 end
@@ -188,6 +189,13 @@ def ajouter( les_cours )
     res = Array(res)
   end
   p res
+  res.each do |ligne|
+    ligne = ligne.gsub(/ \"(.+)\" /, ',\1,')
+    ligne = ligne.gsub(/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ',\1')
+    ligne = ligne + ",ACTIF\n"
+    p ligne
+    CoursTexte.creer_cours( ligne )
+  end
     # res.map { |ligne| nouveaucour(ligne) }
     # ajouter le tout a les_cours
 

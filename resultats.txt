@@ -1,406 +1,419 @@
 ++ RESULTATS DES TESTS ++
 -- ruby Tests/ajouter_test.rb
-Run options: --seed 54154
+Run options: --seed 25493
 
 # Running:
 
-FFFFFFFFFFFFFFFF
+FFFFF.FFFFFFFF.F
 
-Finished in 2.140966s, 7.4733 runs/s, 34.5638 assertions/s.
+Finished in 0.854079s, 18.7336 runs/s, 48.0049 assertions/s.
 
   1) Failure:
-GestionAcademique::ajouter::banque de cours autre que celui par defaut#test_0001_signale une erreur lorsque le depot est inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*.foo.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0001_ajoute un cours s'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\"", "[\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\"]", "\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\""] to be empty.
 
 
   2) Failure:
-GestionAcademique::ajouter::banque de cours autre que celui par defaut#test_0002_ajoute un cours lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'un prealable est incorrect [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["[\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF200\"]", "\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF200\""] to be empty.
 
 
   3) Failure:
-GestionAcademique::ajouter#test_0005_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Prealable.*invalide/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["[\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF2100\"]", "\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF2100\""] to be empty.
 
 
   4) Failure:
-GestionAcademique::ajouter#test_0003_signale une erreur lorsque le sigle est invalide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Sigle.*incorrect/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0004_signale une erreur lorsqu'le cours existe deja [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\"", "[\"INF1130 \\\"Mathematiques\\\" 3\"]", "\"INF1130 \\\"Mathematiques\\\" 3\""] to be empty.
 
 
   5) Failure:
-GestionAcademique::ajouter#test_0001_ajoute dans un fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::ajouter#test_0003_signale une erreur lorsque le sigle est invalide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Sigle.*incorrect/ to match "*** Erreur: Ligne mal formatee".
 
 
   6) Failure:
-GestionAcademique::ajouter#test_0002_signale une erreur lorsque depot inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*[.]cours.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajouter#test_0001_ajoute dans un fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["[\"INF1120 \\\"Programmation I\\\" 3\"]", "\"INF1120 \\\"Programmation I\\\" 3\""] to be empty.
 
 
   7) Failure:
-GestionAcademique::ajouter#test_0004_signale une erreur lorsqu'un prealable est invalide au niveau du sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Sigle.*incorrect/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajouter#test_0005_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["[\"INF1120 \\\"Programmation I\\\" 3 INF1000\"]", "\"INF1120 \\\"Programmation I\\\" 3 INF1000\""] to be empty.
 
 
   8) Failure:
-GestionAcademique::ajouter#test_0006_signale une erreur lorsqu'un prealable est invalide parce qu'inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Prealable.*invalide/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajouter#test_0004_signale une erreur lorsqu'un prealable est invalide au niveau du sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["[\"INF1120 \\\"Programmation I\\\" 3 IF0000\"]", "\"INF1120 \\\"Programmation I\\\" 3 IF0000\""] to be empty.
 
 
   9) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0001_ajoute un cours s'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::ajouter#test_0006_signale une erreur lorsqu'un prealable est invalide parce qu'inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["[\"INF1120 \\\"Programmation I\\\" 3 INF3143\"]", "\"INF1120 \\\"Programmation I\\\" 3 INF3143\""] to be empty.
 
 
  10) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'un prealable est incorrect [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Prealable.*invalide/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajout de cours specifie sur stdin#test_0002_ajoute un cours avec des prealables lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
  11) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0004_signale une erreur lorsqu'le cours existe deja [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /meme sigle existe/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajout de cours specifie sur stdin#test_0003_ajoute plusieurs cours lorsqu'ils n'existent pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
  12) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Prealable.*invalide/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::ajout de cours specifie sur stdin#test_0004_n'ajoute rien si un des cours specifie a des erreurs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
  13) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0001_ajoute un cours sans prealable lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::ajout de cours specifie sur stdin#test_0001_ajoute un cours sans prealable lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
  14) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0002_ajoute un cours avec des prealables lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::ajouter::banque de cours autre que celui par defaut#test_0002_ajoute un cours lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\"", "[\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\"]", "\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\""] to be empty.
 
-
- 15) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0004_n'ajoute rien si un des cours specifie a des erreurs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Prealable invalide.*INF3103/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
- 16) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0003_ajoute plusieurs cours lorsqu'ils n'existent pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-16 runs, 74 assertions, 16 failures, 0 errors, 0 skips
+16 runs, 41 assertions, 14 failures, 0 errors, 0 skips
 -- ruby Tests/desactiver_reactiver_test.rb
-Run options: --seed 55234
+Run options: --seed 44694
 
 # Running:
 
-FFFFFF
+FF.FFF
 
-Finished in 0.755027s, 7.9467 runs/s, 37.0848 assertions/s.
+Finished in 0.341498s, 17.5696 runs/s, 58.5655 assertions/s.
 
   1) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0001_signale une erreur lorsque le sigle est deja actif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /deja actif.*INF1120/i to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0001_signale une erreur lorsque le sigle est deja inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
   2) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
   3) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0001_signale une erreur lorsque le sigle est deja inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /deja inactif.*MAT3140/i to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours#test_0001_signalent une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
   4) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0001_signale une erreur lorsque le sigle est deja actif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
   5) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours#test_0001_signalent une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Aucun cours.*INF9999/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
-
-  6) Failure:
-GestionAcademique::deactiver et reactiver#test_0001_signalent une erreur lorsque depot inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*[.]cours.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-6 runs, 28 assertions, 6 failures, 0 errors, 0 skips
+6 runs, 20 assertions, 5 failures, 0 errors, 0 skips
 -- ruby Tests/init_test.rb
-Run options: --seed 18459
+Run options: --seed 55096
 
 # Running:
 
-FFFFFFFF
+........
 
-Finished in 1.110990s, 7.2008 runs/s, 30.6033 assertions/s.
+Finished in 0.411624s, 19.4352 runs/s, 116.6114 assertions/s.
 
-  1) Failure:
-GestionAcademique::init::le depot .foo.txt n'existe pas#test_0002_cree le depot .foo.txt lorsque l'option --detruire est specifies [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
-  2) Failure:
-GestionAcademique::init::le depot .foo.txt n'existe pas#test_0001_cree le depot .foo.txt lorsqu'aucune option n'est specifiee [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
-  3) Failure:
-GestionAcademique::init::le depot .cours.txt existe#test_0002_cree le depot .cours.txt lorsque l'option --detruire est specifies [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
-  4) Failure:
-GestionAcademique::init::le depot .cours.txt existe#test_0001_signale une erreur lorsque l'option --detruire n'est pas specifiee [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*.cours.txt.*existe.*--detruire/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
-  5) Failure:
-GestionAcademique::init::le depot .foo.txt existe#test_0001_signale une erreur lorsque l'option --detruire n'est pas specifiee [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*.foo.txt.*existe.*--detruire/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
-  6) Failure:
-GestionAcademique::init::le depot .foo.txt existe#test_0002_cree le depot .foo.txt lorsque l'option --detruire est specifies [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
-  7) Failure:
-GestionAcademique::init::le depot .cours.txt n'existe pas#test_0001_cree le depot .cours.txt lorsqu'aucune option n'est specifiee [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
-  8) Failure:
-GestionAcademique::init::le depot .cours.txt n'existe pas#test_0002_cree le depot .cours.txt lorsque l'option --detruire est specifies [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-8 runs, 34 assertions, 8 failures, 0 errors, 0 skips
+8 runs, 48 assertions, 0 failures, 0 errors, 0 skips
 -- ruby Tests/lister_test.rb
-Run options: --seed 58656
+Run options: --seed 58658
 
 # Running:
 
-FFFFFFFFF
+F..FFFF.F
 
-Finished in 1.238090s, 7.2693 runs/s, 16.1539 assertions/s.
+Finished in 0.456452s, 19.7173 runs/s, 46.0070 assertions/s.
 
   1) Failure:
-GestionAcademique::lister#test_0002_liste un fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
-  2) Failure:
-GestionAcademique::lister#test_0004_liste les cours inactifs lorsque requis [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+[]
-
-
-
-  3) Failure:
-GestionAcademique::lister#test_0006_liste les cours avec un format explicite et un separateur de prealables explicite [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120:: 'Programmation I' (3) => ", "INF1130:: 'Mathematiques pour informaticien' (3) => ", "INF2120:: 'Programmation II' (3) => INF1120", "INF3105:: 'Structures de donnees et algorithmes' (3) => INF1130,INF2120", "INF3135:: 'Construction et maintenance de logiciels' (3) => INF1120"]
-+[]
-
-
-
-  4) Failure:
-GestionAcademique::lister#test_0001_signale une erreur lorsque le fichier est inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*[.]cours.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
-  5) Failure:
-GestionAcademique::lister#test_0003_liste uniquement, par defaut, les cours actifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+[]
-
-
-
-  6) Failure:
-GestionAcademique::lister#test_0005_liste les cours avec un format explicite et separateur prealables par defaut [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+[]
-
-
-
-  7) Failure:
-GestionAcademique::lister#test_0007_genere une erreur lorsqu'il y a des arguments en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:136]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+[]
-
-
-
-  8) Failure:
-GestionAcademique::lister::banque de cours autre que celui par defaut#test_0001_signale une erreur lorsque le depot est inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*.foo.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
-  9) Failure:
 GestionAcademique::lister::banque de cours autre que celui par defaut#test_0002_ajoute un cours s'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
+@@ -1 +1,7 @@
 -["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+[]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
 
 
-9 runs, 20 assertions, 9 failures, 0 errors, 0 skips
+
+  2) Failure:
+GestionAcademique::lister#test_0003_liste uniquement, par defaut, les cours actifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
+
+
+
+  3) Failure:
+GestionAcademique::lister#test_0004_liste les cours inactifs lorsque requis [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
+
+
+
+  4) Failure:
+GestionAcademique::lister#test_0005_liste les cours avec un format explicite et separateur prealables par defaut [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
+
+
+
+  5) Failure:
+GestionAcademique::lister#test_0007_genere une erreur lorsqu'il y a des arguments en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:136]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
+
+
+
+  6) Failure:
+GestionAcademique::lister#test_0006_liste les cours avec un format explicite et un separateur de prealables explicite [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120:: 'Programmation I' (3) => ", "INF1130:: 'Mathematiques pour informaticien' (3) => ", "INF2120:: 'Programmation II' (3) => INF1120", "INF3105:: 'Structures de donnees et algorithmes' (3) => INF1130,INF2120", "INF3135:: 'Construction et maintenance de logiciels' (3) => INF1120"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "INF1120:: 'Programmation I' (3) => ", "INF1130:: 'Mathematiques pour informaticien' (3) => ", "INF2120:: 'Programmation II' (3) => INF1120", "INF3105:: 'Structures de donnees et algorithmes' (3) => INF1130,INF2120", "INF3135:: 'Construction et maintenance de logiciels' (3) => INF1120"]
+
+
+9 runs, 21 assertions, 6 failures, 0 errors, 0 skips
 -- ruby Tests/nb_credits_test.rb
-Run options: --seed 57294
+Run options: --seed 6524
 
 # Running:
 
 FFF
 
-Finished in 0.419510s, 7.1512 runs/s, 16.6861 assertions/s.
+Finished in 0.146387s, 20.4936 runs/s, 27.3248 assertions/s.
 
   1) Failure:
 GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0001_retourne 0 lorsqu'aucun sigle indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
-Expected: ["0"]
-  Actual: []
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["0"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "0"]
+
 
 
   2) Failure:
-GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0002_retourne la somme des credits lorsqu'il y a plusieurs sigles [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
-Expected: ["9"]
-  Actual: []
+GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
   3) Failure:
-GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Aucun cours.*INF1111/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0002_retourne la somme des credits lorsqu'il y a plusieurs sigles [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["9"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "9"]
 
-3 runs, 7 assertions, 3 failures, 0 errors, 0 skips
+
+3 runs, 4 assertions, 3 failures, 0 errors, 0 skips
 -- ruby Tests/prealables_test.rb
-Run options: --seed 431
+Run options: --seed 39675
 
 # Running:
 
-FFFFFF
+FFFF.F
 
-Finished in 0.831648s, 7.2146 runs/s, 20.4413 assertions/s.
+Finished in 0.339041s, 17.6970 runs/s, 44.2425 assertions/s.
 
   1) Failure:
-GestionAcademique::prealables#test_0002_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Aucun cours.*XXX000/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
-  2) Failure:
-GestionAcademique::prealables#test_0001_signale une erreur lorsque fichier inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*[.]cours.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-
-  3) Failure:
 GestionAcademique::prealables::banque de cours avec plusieurs cours dont plusieurs prealables indirects#test_0001_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
+@@ -1 +1,9 @@
 -["INF1120", "INF1130", "INF2120", "INF3105", "INF3135", "INF4100", "INF7341"]
-+[]
++["\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\"", "\"INF4100,Analyse d'algorithmes,3,INF3135:INF3105,ACTIF\
++\"", "\"INF7341,Structures de donnees,3,INF3105,ACTIF\
++\"", "\"INF7440,Conception et analyse d'algorithmes,3,INF4100:INF7341,ACTIF\
++\""]
 
-
-
-  4) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
-Expected: ["INF1130", "INF2120"]
-  Actual: []
-
-
-  5) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120", "INF1130", "INF2120"]
-+[]
-
-
-
-  6) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-6 runs, 17 assertions, 6 failures, 0 errors, 0 skips
--- ruby Tests/supprimer_test.rb
-Run options: --seed 61466
-
-# Running:
-
-FFFFFF
-
-Finished in 1.314098s, 4.5659 runs/s, 19.7854 assertions/s.
-
-  1) Failure:
-GestionAcademique::supprimer#test_0001_signale une erreur lorsque depot inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*[.]cours.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
 
 
   2) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0001_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Aucun cours.*INF9999/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
 
 
   3) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0005_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Format.*incorrect.*INF220/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1130", "INF2120"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
+
 
 
   4) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'il y a un argument en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:137]:
-Expected /Argument.*en trop/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120", "INF1130", "INF2120"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
+
 
 
   5) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0004_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
+GestionAcademique::prealables#test_0002_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Aucun cours.*XXX000/ to match "*** Erreur: Argument(s) en trop: 'XXX0000'".
 
-
-  6) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0003_supprime le cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-6 runs, 26 assertions, 6 failures, 0 errors, 0 skips
--- ruby Tests/trouver_test.rb
-Run options: --seed 12368
+6 runs, 15 assertions, 5 failures, 0 errors, 0 skips
+-- ruby Tests/supprimer_test.rb
+Run options: --seed 61659
 
 # Running:
 
-FFFFFFFFFF
+.FFFFF
 
-Finished in 2.022546s, 4.9443 runs/s, 9.3941 assertions/s.
+Finished in 0.316475s, 18.9589 runs/s, 44.2373 assertions/s.
 
   1) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0002_trouve toutes les lignes avec n'importe quoi [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'il y a un argument en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:136]:
 --- expected
 +++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+[]
+@@ -1 +1,7 @@
+-[]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
   2) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0003_supprime le cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
+
+
+  3) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0001_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
+
+
+  4) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0004_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
+
+
+  5) Failure:
+GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0005_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
+Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
+
+6 runs, 14 assertions, 5 failures, 0 errors, 0 skips
+-- ruby Tests/trouver_test.rb
+Run options: --seed 33860
+
+# Running:
+
+.F.FFFFFFF
+
+Finished in 0.525870s, 19.0161 runs/s, 38.0322 assertions/s.
+
+  1) Failure:
+GestionAcademique::trouver#test_0002_retourne rien lorsque fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: '.'", ""] to be empty.
+
+
+  2) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affiche tous les cours selon le format indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+[]
+@@ -1 +1,7 @@
+-["INF1120 => 'Programmation I' (3 cr.)", "INF1130 => 'Mathematiques pour informaticien' (3 cr.)", "INF2120 => 'Programmation II' (3 cr.)", "INF3105 => 'Structures de donnees et algorithmes' (3 cr.)", "INF3135 => 'Construction et maintenance de logiciels' (3 cr.)"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
@@ -408,64 +421,95 @@ GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouv
 GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0006_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de titre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
+@@ -1 +1,7 @@
 -["MAT3140? \"Algebre et logique\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF1120 \"Programmation I\" ()", "INF2120 \"Programmation II\" (INF1120)"]
-+[]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
   4) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affiche tous les cours selon le format indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
--["INF1120 => 'Programmation I' (3 cr.)", "INF1130 => 'Mathematiques pour informaticien' (3 cr.)", "INF2120 => 'Programmation II' (3 cr.)", "INF3105 => 'Structures de donnees et algorithmes' (3 cr.)", "INF3135 => 'Construction et maintenance de logiciels' (3 cr.)"]
-+[]
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
   5) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0004_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
-+[]
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
   6) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0004_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+[]
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
   7) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0002_trouve toutes les lignes avec n'importe quoi [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1 @@
+@@ -1 +1,7 @@
 -["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+[]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
 
   8) Failure:
-GestionAcademique::trouver#test_0001_signale une erreur lorsque le fichier est inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /fichier.*[.]cours.txt.*existe pas/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1,7 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
++["\"MAT3140,Algebre et logique,3,,INACTIF\
++\"", "\"INF1120,Programmation I,3,,ACTIF\
++\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
++\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
++\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
++\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
++\""]
 
 
-  9) Failure:
-GestionAcademique::trouver#test_0002_retourne rien lorsque fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["./ga.rb:251: dynamic constant assignment", "COMMANDES = [:ajouter,", "           ^", "./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end"] to be empty.
-
-
- 10) Failure:
-GestionAcademique::trouver#test_0003_signale une erreur lorsqu'argument en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:137]:
-Expected /Argument.*en trop/ to match "./ga.rb:251: dynamic constant assignmentCOMMANDES = [:ajouter,           ^./ga.rb:310: syntax error, unexpected end-of-input, expecting keyword_end".
-
-10 runs, 19 assertions, 10 failures, 0 errors, 0 skips
+10 runs, 20 assertions, 8 failures, 0 errors, 0 skips

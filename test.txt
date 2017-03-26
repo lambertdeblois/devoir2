@@ -1,2 +1,2 @@
-INF3143 "Intoduction info" 3
+INF3143 "Intoduction info" 3 INF1120
 INF1120 "Machin Machin" 3
