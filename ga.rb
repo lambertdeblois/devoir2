@@ -194,6 +194,7 @@ def ajouter( les_cours )
     ligne = ligne.gsub(/(,[0-9])(,ACTIF\n)/, '\1,\2')
     p ligne
     cour = CoursTexte.creer_cours( ligne )
+    # cheker si les prealables sont des cours actif
   end
     # res.map { |ligne| nouveaucour(ligne) }
     # ajouter le tout a les_cours
