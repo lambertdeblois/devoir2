@@ -1,339 +1,100 @@
 ++ RESULTATS DES TESTS ++
 -- ruby Tests/ajouter_test.rb
-Run options: --seed 25493
+Run options: --seed 32114
 
 # Running:
 
-FFFFF.FFFFFFFF.F
+...F.F..........
 
-Finished in 0.854079s, 18.7336 runs/s, 48.0049 assertions/s.
+Finished in 0.843391s, 18.9710 runs/s, 100.7836 assertions/s.
 
   1) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0001_ajoute un cours s'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\"", "[\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\"]", "\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\""] to be empty.
+GestionAcademique::ajout de cours specifie sur stdin#test_0004_n'ajoute rien si un des cours specifie a des erreurs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
+Expected /Prealable invalide.*INF3103/ to match "/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/cours-texte.rb:27:in `creer_cours': undefined method `split' for nil:NilClass (NoMethodError)\tfrom ./ga.rb:202:in `block in ajouter'\tfrom ./ga.rb:193:in `each'\tfrom ./ga.rb:193:in `ajouter'\tfrom ./ga.rb:331:in `<main>'".
 
 
   2) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'un prealable est incorrect [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["[\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF200\"]", "\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF200\""] to be empty.
+GestionAcademique::ajout de cours specifie sur stdin#test_0003_ajoute plusieurs cours lorsqu'ils n'existent pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/cours-texte.rb:27:in `creer_cours': undefined method `split' for nil:NilClass (NoMethodError)", "\tfrom ./ga.rb:202:in `block in ajouter'", "\tfrom ./ga.rb:193:in `each'", "\tfrom ./ga.rb:193:in `ajouter'", "\tfrom ./ga.rb:331:in `<main>'"] to be empty.
 
-
-  3) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["[\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF2100\"]", "\"INF2160 \\\"Paradigmes de programmation\\\" 3 INF2120 INF2100\""] to be empty.
-
-
-  4) Failure:
-GestionAcademique::ajouter::banque de cours avec plusieurs cours#test_0004_signale une erreur lorsqu'le cours existe deja [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\"", "[\"INF1130 \\\"Mathematiques\\\" 3\"]", "\"INF1130 \\\"Mathematiques\\\" 3\""] to be empty.
-
-
-  5) Failure:
-GestionAcademique::ajouter#test_0003_signale une erreur lorsque le sigle est invalide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
-Expected /Sigle.*incorrect/ to match "*** Erreur: Ligne mal formatee".
-
-
-  6) Failure:
-GestionAcademique::ajouter#test_0001_ajoute dans un fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["[\"INF1120 \\\"Programmation I\\\" 3\"]", "\"INF1120 \\\"Programmation I\\\" 3\""] to be empty.
-
-
-  7) Failure:
-GestionAcademique::ajouter#test_0005_signale une erreur lorsqu'un prealable est invalide parce qu'inexistant [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["[\"INF1120 \\\"Programmation I\\\" 3 INF1000\"]", "\"INF1120 \\\"Programmation I\\\" 3 INF1000\""] to be empty.
-
-
-  8) Failure:
-GestionAcademique::ajouter#test_0004_signale une erreur lorsqu'un prealable est invalide au niveau du sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["[\"INF1120 \\\"Programmation I\\\" 3 IF0000\"]", "\"INF1120 \\\"Programmation I\\\" 3 IF0000\""] to be empty.
-
-
-  9) Failure:
-GestionAcademique::ajouter#test_0006_signale une erreur lorsqu'un prealable est invalide parce qu'inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["[\"INF1120 \\\"Programmation I\\\" 3 INF3143\"]", "\"INF1120 \\\"Programmation I\\\" 3 INF3143\""] to be empty.
-
-
- 10) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0002_ajoute un cours avec des prealables lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
- 11) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0003_ajoute plusieurs cours lorsqu'ils n'existent pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
- 12) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0004_n'ajoute rien si un des cours specifie a des erreurs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
- 13) Failure:
-GestionAcademique::ajout de cours specifie sur stdin#test_0001_ajoute un cours sans prealable lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
- 14) Failure:
-GestionAcademique::ajouter::banque de cours autre que celui par defaut#test_0002_ajoute un cours lorsqu'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\"", "[\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\"]", "\"INF3143 \\\"Modelisation et specification formelle\\\" 3 INF1130 INF2120\""] to be empty.
-
-16 runs, 41 assertions, 14 failures, 0 errors, 0 skips
+16 runs, 85 assertions, 2 failures, 0 errors, 0 skips
 -- ruby Tests/desactiver_reactiver_test.rb
-Run options: --seed 44694
+Run options: --seed 30142
 
 # Running:
 
-FF.FFF
+......
 
-Finished in 0.341498s, 17.5696 runs/s, 58.5655 assertions/s.
+Finished in 0.412460s, 14.5469 runs/s, 106.6771 assertions/s.
 
-  1) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0001_signale une erreur lorsque le sigle est deja inactif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  2) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::desactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  3) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours#test_0001_signalent une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  4) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0001_signale une erreur lorsque le sigle est deja actif [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  5) Failure:
-GestionAcademique::deactiver et reactiver::banque de cours avec plusieurs cours::reactiver#test_0002_change le statut du cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-6 runs, 20 assertions, 5 failures, 0 errors, 0 skips
+6 runs, 44 assertions, 0 failures, 0 errors, 0 skips
 -- ruby Tests/init_test.rb
-Run options: --seed 55096
+Run options: --seed 39099
 
 # Running:
 
 ........
 
-Finished in 0.411624s, 19.4352 runs/s, 116.6114 assertions/s.
+Finished in 0.389789s, 20.5239 runs/s, 123.1435 assertions/s.
 
 8 runs, 48 assertions, 0 failures, 0 errors, 0 skips
 -- ruby Tests/lister_test.rb
-Run options: --seed 58658
+Run options: --seed 29653
 
 # Running:
 
-F..FFFF.F
+.........
 
-Finished in 0.456452s, 19.7173 runs/s, 46.0070 assertions/s.
+Finished in 0.523145s, 17.2036 runs/s, 74.5491 assertions/s.
 
-  1) Failure:
-GestionAcademique::lister::banque de cours autre que celui par defaut#test_0002_ajoute un cours s'il n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-
-
-
-  2) Failure:
-GestionAcademique::lister#test_0003_liste uniquement, par defaut, les cours actifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-
-
-
-  3) Failure:
-GestionAcademique::lister#test_0004_liste les cours inactifs lorsque requis [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-
-
-
-  4) Failure:
-GestionAcademique::lister#test_0005_liste les cours avec un format explicite et separateur prealables par defaut [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-
-
-
-  5) Failure:
-GestionAcademique::lister#test_0007_genere une erreur lorsqu'il y a des arguments en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:136]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-
-
-
-  6) Failure:
-GestionAcademique::lister#test_0006_liste les cours avec un format explicite et un separateur de prealables explicite [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["INF1120:: 'Programmation I' (3) => ", "INF1130:: 'Mathematiques pour informaticien' (3) => ", "INF2120:: 'Programmation II' (3) => INF1120", "INF3105:: 'Structures de donnees et algorithmes' (3) => INF1130,INF2120", "INF3135:: 'Construction et maintenance de logiciels' (3) => INF1120"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "INF1120:: 'Programmation I' (3) => ", "INF1130:: 'Mathematiques pour informaticien' (3) => ", "INF2120:: 'Programmation II' (3) => INF1120", "INF3105:: 'Structures de donnees et algorithmes' (3) => INF1130,INF2120", "INF3135:: 'Construction et maintenance de logiciels' (3) => INF1120"]
-
-
-9 runs, 21 assertions, 6 failures, 0 errors, 0 skips
+9 runs, 39 assertions, 0 failures, 0 errors, 0 skips
 -- ruby Tests/nb_credits_test.rb
-Run options: --seed 6524
+Run options: --seed 32909
 
 # Running:
 
-FFF
+...
 
-Finished in 0.146387s, 20.4936 runs/s, 27.3248 assertions/s.
+Finished in 0.181101s, 16.5654 runs/s, 71.7833 assertions/s.
 
-  1) Failure:
-GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0001_retourne 0 lorsqu'aucun sigle indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["0"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "0"]
-
-
-
-  2) Failure:
-GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0003_signale une erreur lorsqu'un sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  3) Failure:
-GestionAcademique::nb_credits::banque de cours avec plusieurs cours#test_0002_retourne la somme des credits lorsqu'il y a plusieurs sigles [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--["9"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "9"]
-
-
-3 runs, 4 assertions, 3 failures, 0 errors, 0 skips
+3 runs, 13 assertions, 0 failures, 0 errors, 0 skips
 -- ruby Tests/prealables_test.rb
-Run options: --seed 39675
+Run options: --seed 37848
 
 # Running:
 
 FFFF.F
 
-Finished in 0.339041s, 17.6970 runs/s, 44.2425 assertions/s.
+Finished in 0.326039s, 18.4027 runs/s, 52.1410 assertions/s.
 
   1) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours dont plusieurs prealables indirects#test_0001_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1,9 @@
--["INF1120", "INF1130", "INF2120", "INF3105", "INF3135", "INF4100", "INF7341"]
-+["\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\"", "\"INF4100,Analyse d'algorithmes,3,INF3135:INF3105,ACTIF\
-+\"", "\"INF7341,Structures de donnees,3,INF3105,ACTIF\
-+\"", "\"INF7440,Conception et analyse d'algorithmes,3,INF4100:INF7341,ACTIF\
-+\""]
-
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
+Expected ["*** Erreur: Argument(s) en trop: 'INF1120'", ""] to be empty.
 
 
   2) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+Expected: ["INF1130", "INF2120"]
+  Actual: []
 
 
   3) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1130", "INF2120"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120", "INF1130", "INF2120"]
++[]
 
 
 
   4) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::prealables::banque de cours avec plusieurs cours dont plusieurs prealables indirects#test_0001_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1120", "INF1130", "INF2120"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120", "INF1130", "INF2120", "INF3105", "INF3135", "INF4100", "INF7341"]
++[]
 
 
 
@@ -341,60 +102,25 @@ GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_re
 GestionAcademique::prealables#test_0002_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:114]:
 Expected /Aucun cours.*XXX000/ to match "*** Erreur: Argument(s) en trop: 'XXX0000'".
 
-6 runs, 15 assertions, 5 failures, 0 errors, 0 skips
+6 runs, 17 assertions, 5 failures, 0 errors, 0 skips
 -- ruby Tests/supprimer_test.rb
-Run options: --seed 61659
+Run options: --seed 12741
 
 # Running:
 
-.FFFFF
+......
 
-Finished in 0.316475s, 18.9589 runs/s, 44.2373 assertions/s.
+Finished in 0.300991s, 19.9342 runs/s, 119.6049 assertions/s.
 
-  1) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0002_signale une erreur lorsqu'il y a un argument en trop [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:136]:
---- expected
-+++ actual
-@@ -1 +1,7 @@
--[]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
-
-
-
-  2) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0003_supprime le cours lorsque le sigle existe [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  3) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0001_signale une erreur lorsque le sigle n'existe pas [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  4) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0004_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-
-  5) Failure:
-GestionAcademique::supprimer::banque de cours avec plusieurs cours#test_0005_supprime les divers cours specifies via stdin [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:112]:
-Expected ["\"MAT3140,Algebre et logique,3,,INACTIF\\n\"", "\"INF1120,Programmation I,3,,ACTIF\\n\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\\n\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\\n\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\\n\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\\n\""] to be empty.
-
-6 runs, 14 assertions, 5 failures, 0 errors, 0 skips
+6 runs, 36 assertions, 0 failures, 0 errors, 0 skips
 -- ruby Tests/trouver_test.rb
-Run options: --seed 33860
+Run options: --seed 20946
 
 # Running:
 
 .F.FFFFFFF
 
-Finished in 0.525870s, 19.0161 runs/s, 38.0322 assertions/s.
+Finished in 0.530255s, 18.8588 runs/s, 37.7177 assertions/s.
 
   1) Failure:
 GestionAcademique::trouver#test_0002_retourne rien lorsque fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
@@ -402,18 +128,12 @@ Expected ["*** Erreur: Argument(s) en trop: '.'", ""] to be empty.
 
 
   2) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affiche tous les cours selon le format indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1120 => 'Programmation I' (3 cr.)", "INF1130 => 'Mathematiques pour informaticien' (3 cr.)", "INF2120 => 'Programmation II' (3 cr.)", "INF3105 => 'Structures de donnees et algorithmes' (3 cr.)", "INF3135 => 'Construction et maintenance de logiciels' (3 cr.)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++[]
 
 
 
@@ -421,63 +141,39 @@ GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affic
 GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0006_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de titre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
+@@ -1 +1 @@
 -["MAT3140? \"Algebre et logique\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF1120 \"Programmation I\" ()", "INF2120 \"Programmation II\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
++[]
 
 
 
   4) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affiche tous les cours selon le format indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120 => 'Programmation I' (3 cr.)", "INF1130 => 'Mathematiques pour informaticien' (3 cr.)", "INF2120 => 'Programmation II' (3 cr.)", "INF3105 => 'Structures de donnees et algorithmes' (3 cr.)", "INF3135 => 'Construction et maintenance de logiciels' (3 cr.)"]
++[]
 
 
 
   5) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0004_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
++[]
 
 
 
   6) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
++[]
 
 
 
@@ -485,31 +181,19 @@ GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouv
 GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0002_trouve toutes les lignes avec n'importe quoi [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
+@@ -1 +1 @@
 -["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
++[]
 
 
 
   8) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0004_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
-@@ -1 +1,7 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
-+["\"MAT3140,Algebre et logique,3,,INACTIF\
-+\"", "\"INF1120,Programmation I,3,,ACTIF\
-+\"", "\"INF1130,Mathematiques pour informaticien,3,,ACTIF\
-+\"", "\"INF2120,Programmation II,3,INF1120,ACTIF\
-+\"", "\"INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF\
-+\"", "\"INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF\
-+\""]
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++[]
 
 
 10 runs, 20 assertions, 8 failures, 0 errors, 0 skips

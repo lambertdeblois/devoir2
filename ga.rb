@@ -166,15 +166,17 @@ end
 
 
 def assert_ligne( ligne )
-  erreur "Ligne mal formatee" unless ligne =~ Regexp.new(Motifs::COURS)
+  erreur "Ligne mal formatee #{ligne}" unless ligne =~ Regexp.new(Motifs::COURS)
 end
 
 def ajouter( les_cours )
   res = Array.new
   if !ARGV[0]
     ARGF.each do |ligne|
-      assert_ligne(ligne)
-      res << ligne.strip
+      if ligne !~ /^[\\\"n].$/ && ligne.length != 0
+        #assert_ligne(ligne)
+        res << ligne.strip
+      end
     end
   elsif ARGV.length > 2
     res << ARGV[0]; ARGV.shift
@@ -190,12 +192,14 @@ def ajouter( les_cours )
   bon_cours = Array.new
   res.each do |ligne|
     # formatage pour pouvoir creer le cours
-    ligne = ligne.gsub(/ \"(.+)\" ([0-9]+)/, ',\1,\2,')
+    ligne = ligne.gsub(/ +\"(.+)\" +([0-9]+)/, ',\1,\2,')
     ligne = ligne.gsub(/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ':\1')
+    ligne = ligne.gsub(/ *:/, ':')
     ligne = ligne.gsub(/,:/, ',')
     ligne = ligne + ",ACTIF\n"
     ligne = ligne.gsub(/(,[0-9])(,ACTIF\n)/, '\1,\2')
     # creer le cour avec la ligne
+    p ligne
     cour = CoursTexte.creer_cours( ligne )
     # check si le cour existe deja
     resultat = les_cours.find { |cours| cours.sigle.to_s == cour.sigle.to_s }

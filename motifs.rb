@@ -10,7 +10,7 @@ module Motifs
   #   /.../
 
   SIGLE =  %r{\b[A-Z]{3}[0-9]{3}[A-Z0-9]\b}
-  TITRE = %r{(".+")|('.+')|(.+)}
+  TITRE = %r{\\?(".+")|('.+')|(.+)\\?}
   NOMBRE = %r{\d}
   PREALABLES = %r{((\b[A-Z]{3}[0-9]{3}[A-Z0-9]\b) *)+}
   DEPOT = %r{--depot\s*=.+}

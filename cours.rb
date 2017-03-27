@@ -22,9 +22,11 @@ class Cours
                  "Titre vide: '#{titre}'" )
     DBC.require( nb_credits.to_i > 0,
                  "Nb. credits invalides: #{nb_credits}!?" )
-    prealables.each do |x|
-      DBC.require( x.kind_of?(Symbol) && /^#{Motifs::SIGLE}$/ =~ x,
-                  "Prealable incorrect: #{x}")
+    if prealables
+      prealables.each do |x|
+        DBC.require( x.kind_of?(Symbol) && /^#{Motifs::SIGLE}$/ =~ x,
+                    "Prealable invalide ou Sigle incorrect: #{x}")
+      end
     end
     @sigle, @titre, @nb_credits, @prealables, @actif = sigle, titre, nb_credits, prealables, actif
     # A COMPLETER.
