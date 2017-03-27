@@ -18,6 +18,7 @@ module Motifs
   FORMAT = %r{--format\s*=.+}
   SEP = %r{--separateur_prealables\s*=.+}
   AVEC_INACTIFS = %r{--avec_inactifs}
+  TOUS = %r{--tous}
 
   # Motif pour un cours complet
   COURS = %r{

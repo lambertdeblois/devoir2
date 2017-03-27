@@ -164,11 +164,6 @@ def lister( les_cours )
   [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
-
-def assert_ligne( ligne )
-  erreur "Ligne mal formatee #{ligne}" unless ligne =~ Regexp.new(Motifs::COURS)
-end
-
 def ajouter( les_cours )
   res = Array.new
   if !ARGV[0]
@@ -186,7 +181,6 @@ def ajouter( les_cours )
       res << ARGV[0]; ARGV.shift
     end
     res = res.join(' ')
-    #assert_ligne(res)
     res = Array(res)
   end
   copie_les_cours = les_cours.dup
@@ -269,7 +263,22 @@ def reactiver( les_cours )
 end
 
 def prealables( les_cours )
-  [les_cours, nil] # A MODIFIER/COMPLETER!
+  (tous = ARGV.shift) if ARGV[0] =~ Regexp.new(Motifs::TOUS)
+  res = les_cours.find { |cour| cour.sigle.to_s == ARGV[0] }
+  erreur "Aucun cours #{ARGV[0]}" unless res
+  res = res.prealables.map{ |prealable| prealable.to_s }
+
+  ARGV.shift
+  if tous
+    res.each do |cour|
+      res = res + les_cours.find { |cours| cours.sigle.to_s == cour }
+                            .prealables
+                            .map { |prealable| prealable.to_s}
+    end
+  end
+  res = res.sort
+  res = res.uniq
+  [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
 
