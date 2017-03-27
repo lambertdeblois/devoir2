@@ -173,9 +173,9 @@ def ajouter( les_cours )
   res = Array.new
   if !ARGV[0]
     ARGF.each do |ligne|
-      if ligne !~ /^[\\\"n].$/ && ligne.length != 0
-        #assert_ligne(ligne)
-        res << ligne.strip
+      ligne = ligne.strip
+      if ligne.length != 0
+        res << ligne
       end
     end
   elsif ARGV.length > 2
@@ -189,26 +189,27 @@ def ajouter( les_cours )
     #assert_ligne(res)
     res = Array(res)
   end
+  copie_les_cours = les_cours.dup
   bon_cours = Array.new
   res.each do |ligne|
     # formatage pour pouvoir creer le cours
-    ligne = ligne.gsub(/ +\"(.+)\" +([0-9]+)/, ',\1,\2,')
+    ligne = ligne.gsub(/ +["'](.+)["'] +([0-9]+)/, ',\1,\2,')
     ligne = ligne.gsub(/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ':\1')
     ligne = ligne.gsub(/ *:/, ':')
     ligne = ligne.gsub(/,:/, ',')
     ligne = ligne + ",ACTIF\n"
     ligne = ligne.gsub(/(,[0-9])(,ACTIF\n)/, '\1,\2')
     # creer le cour avec la ligne
-    p ligne
     cour = CoursTexte.creer_cours( ligne )
     # check si le cour existe deja
     resultat = les_cours.find { |cours| cours.sigle.to_s == cour.sigle.to_s }
     erreur "meme sigle existe" if resultat
     # check si les prealables existent et sont actifs
     cour.prealables.each do |prea|
-      resultat = les_cours.find { |cours| cours.sigle.to_s == prea.to_s && cours.actif? }
+      resultat = copie_les_cours.find { |cours| cours.sigle.to_s == prea.to_s && cours.actif? }
       erreur "Prealable invalide #{prea}" unless resultat
     end
+    copie_les_cours << cour
     bon_cours << cour
   end
   les_cours = les_cours + bon_cours
