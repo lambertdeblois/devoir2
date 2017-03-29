@@ -45,12 +45,13 @@ class Cours
   #
   def to_s( le_format = nil, separateur_prealables = CoursTexte::SEPARATEUR_PREALABLES )
     # Format simple par defaut, pour les cas de tests de base.a
-    if le_format.nil? || le_format == '%S "%-10T" (%P)'
+    if le_format.nil?
       return format("%s%s \"%-10s\" (%s)",
                     sigle,
                     actif? ? "" : "?",
                     titre,
                     prealables.join(separateur_prealables))
+=begin
     elsif le_format == "ABC"
       return 'ABC'
     elsif le_format == "%S %S %C %T %S"
@@ -77,11 +78,31 @@ class Cours
       return format("%s => \'%s\' (%d)", sigle, titre, nb_credits)
     elsif le_format == "%S => '%-40T' (%C)"
       return format("%s => \'%-40s\' (%d)", sigle, titre, nb_credits)
+    elsif le_format == "%S => '%T' (%C cr.)"
+      return format("%s => \'%s\' (%d cr.)", sigle, titre, nb_credits)
+=end
+    else
+      while !(specification = (/%(\.|-)?[0-9]*./.match le_format).to_s).empty?
+        attribut = case specification[-1]
+                  when "S"
+                    @sigle
+                  when "T"
+                    @titre
+                  when "C"
+                    @nb_credits
+                  when "P"
+                    @prealables.join(separateur_prealables)
+                  when "A"
+                    @actif? CoursTexte::ACTIF : CoursTexte::INACTIF
+                end
+        attribut_ok = format(specification.sub(specification[-1], "s"), attribut)
+        le_format = le_format.gsub(specification, attribut_ok)
+      end
+      return le_format
     end
 
     fail "Cas non traite: to_s( #{le_format}, #{separateur_prealables} )"
   end
-
 
   #
   # Ordonne les cours selon le sigle.
