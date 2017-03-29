@@ -128,27 +128,27 @@ ex_trouver_format: ex_init
 
 test_all:
 	@echo "++ RESULTATS DES TESTS ++" > resultats.txt
-	@#
-	@echo "-- ruby Tests/ajouter_test.rb" >> resultats.txt
-	ruby Tests/ajouter_test.rb | tee -a resultats.txt
-	@#
-	@echo "-- ruby Tests/desactiver_reactiver_test.rb" >> resultats.txt
-	ruby Tests/desactiver_reactiver_test.rb | tee -a resultats.txt
-	@#
-	@echo "-- ruby Tests/init_test.rb" >> resultats.txt
-	ruby Tests/init_test.rb | tee -a resultats.txt
-	@#
-	@echo "-- ruby Tests/lister_test.rb" >> resultats.txt
-	ruby Tests/lister_test.rb | tee -a resultats.txt
-	@#
-	@echo "-- ruby Tests/nb_credits_test.rb" >> resultats.txt
-	ruby Tests/nb_credits_test.rb | tee -a resultats.txt
+	#@#
+	#@echo "-- ruby Tests/ajouter_test.rb" >> resultats.txt
+	#ruby Tests/ajouter_test.rb | tee -a resultats.txt
+	#@#
+	#@echo "-- ruby Tests/desactiver_reactiver_test.rb" >> resultats.txt
+	#ruby Tests/desactiver_reactiver_test.rb | tee -a resultats.txt
+	#@#
+	#@echo "-- ruby Tests/init_test.rb" >> resultats.txt
+	#ruby Tests/init_test.rb | tee -a resultats.txt
+	#@#
+	#@echo "-- ruby Tests/lister_test.rb" >> resultats.txt
+	#ruby Tests/lister_test.rb | tee -a resultats.txt
+	#@#
+	#@echo "-- ruby Tests/nb_credits_test.rb" >> resultats.txt
+	#ruby Tests/nb_credits_test.rb | tee -a resultats.txt
 	@#
 	@echo "-- ruby Tests/prealables_test.rb" >> resultats.txt
 	ruby Tests/prealables_test.rb | tee -a resultats.txt
-	@#
-	@echo "-- ruby Tests/supprimer_test.rb" >> resultats.txt
-	ruby Tests/supprimer_test.rb | tee -a resultats.txt
+	#@#
+	#@echo "-- ruby Tests/supprimer_test.rb" >> resultats.txt
+	#ruby Tests/supprimer_test.rb | tee -a resultats.txt
 	@#
 	@echo "-- ruby Tests/trouver_test.rb" >> resultats.txt
 	ruby Tests/trouver_test.rb | tee -a resultats.txt
