@@ -51,49 +51,19 @@ class Cours
                     actif? ? "" : "?",
                     titre,
                     prealables.join(separateur_prealables))
-=begin
-    elsif le_format == "ABC"
-      return 'ABC'
-    elsif le_format == "%S %S %C %T %S"
-      return format("%s %s %d %s %s", sigle, sigle, nb_credits, titre, sigle)
-    elsif le_format == "titre = '%T' => %S (%C)"
-      return format("titre = '%s' => %s (%d)", titre, sigle, nb_credits)
-    elsif le_format == "%9S:%-9S:%.9S"
-      return format("  %s:%s  :%s",sigle, sigle, sigle)
-    elsif le_format == "(%P)"
-      return format("(%s)", prealables.join(separateur_prealables))
-    elsif le_format == "%P"
-      return format("%s", prealables.join(" "))
-    elsif le_format == "%T => %S"
-      return format("%s => %s", titre, sigle)
-    elsif le_format == "%S \"%T\" (%P)"
-      return format("%s \"%s\" (%s)", sigle, titre, prealables.join(separateur_prealables))
-    elsif le_format == "%S:: \'%T\' (%C) => %P"
-      return format("%s:: \'%s\' (%d) => %s",sigle, titre, nb_credits, prealables.join(separateur_prealables))
-    elsif le_format == "%S"
-      return format("%s", sigle)
-    elsif le_format == "%S => '%T'"
-      return format("%s => \'%s\'", sigle, titre)
-    elsif le_format == "%S => '%T' (%C)"
-      return format("%s => \'%s\' (%d)", sigle, titre, nb_credits)
-    elsif le_format == "%S => '%-40T' (%C)"
-      return format("%s => \'%-40s\' (%d)", sigle, titre, nb_credits)
-    elsif le_format == "%S => '%T' (%C cr.)"
-      return format("%s => \'%s\' (%d cr.)", sigle, titre, nb_credits)
-=end
     else
       while !(specification = (/%(\.|-)?[0-9]*./.match le_format).to_s).empty?
         attribut = case specification[-1]
                   when "S"
-                    @sigle
+                    sigle
                   when "T"
-                    @titre
+                    titre
                   when "C"
-                    @nb_credits
+                    nb_credits
                   when "P"
-                    @prealables.join(separateur_prealables)
+                    prealables.join(separateur_prealables)
                   when "A"
-                    @actif? CoursTexte::ACTIF : CoursTexte::INACTIF
+                    actif? ? CoursTexte::ACTIF : CoursTexte::INACTIF
                 end
         attribut_ok = format(specification.sub(specification[-1], "s"), attribut)
         le_format = le_format.gsub(specification, attribut_ok)
