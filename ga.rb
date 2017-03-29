@@ -267,11 +267,10 @@ def prealables( les_cours )
   res = les_cours.find { |cour| cour.sigle.to_s == ARGV[0] }
   erreur "Aucun cours #{ARGV[0]}" unless res
   res = res.prealables.map{ |prealable| prealable.to_s }
-  # p res.class
-  # p res.length
   ARGV.shift
-  i = 0
+
   if tous
+    i = 0
     while i < res.length do
       res = res + les_cours.find { |cours| cours.sigle.to_s == res[i] }
                             .prealables
@@ -279,9 +278,11 @@ def prealables( les_cours )
       i += 1
     end
   end
-  res = res.sort
-  res = res.uniq
-  # res = res.to_s + "\n"
+  res = res.sort.uniq
+#  p res.class
+  p res
+  # res = res.join(", ") + "\n"
+  # res = res.split(',')
   [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
