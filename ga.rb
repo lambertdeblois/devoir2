@@ -250,7 +250,7 @@ def trouver( les_cours )
     end
     ARGV.shift
   end
-  res = res.select { |cour| /#{ARGV[0]}/i =~ (cour.to_s) }
+  res = res.select { |cour| (cour.to_s) =~ /#{ARGV[0]}/i }
   res = cle_tri == "titre" ? res.sort_by(&:titre) : res.sort_by(&:sigle)
   res = res.map { |cour| cour.to_s(le_format, sep) }.join("\n")
   ARGV.shift
@@ -292,7 +292,7 @@ def get_cour( cour, les_cours )
   res = les_cours.find{ |cours| cours.sigle.to_s == cour }
   erreur "Aucun cours #{cour}" unless res
   ARGV.shift
-  res
+  return res
 end
 #######################################################
 # Les differentes commandes possibles.
