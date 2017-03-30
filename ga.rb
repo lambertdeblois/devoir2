@@ -243,11 +243,10 @@ def supprimer( les_cours )
 end
 
 def trouver( les_cours )
+  res = les_cours.select{ |cour| cour.actif? }
   if ARGV[0] =~ Regexp.new(Motifs::AVEC_INACTIFS)
     res = les_cours
     ARGV.shift
-  else
-    res = les_cours.select{ |cour| cour.actif? }
   end
   if ARGV[0] =~ Regexp.new(Motifs::CLE_TRI)
     cle_tri = ARGV[0].partition('=').last
@@ -262,13 +261,12 @@ def trouver( les_cours )
     sep = ARGV[0].partition('=').last
     ARGV.shift
   end
-
-  res = res.select { |cour| /#{ARGV[0]}/.match(cour.to_s) }
-  # faire le sort
-  res = res.map { |cour| cour.to_s(le_format, sep) }.join("\n") << "\n"
+  res = res.select { |cour| /#{ARGV[0]}/i =~ (cour.to_s) }
+  res = cle_tri == "titre" ? res.sort_by(&:titre) : res.sort_by(&:sigle)
+  res = res.map { |cour| cour.to_s(le_format, sep) }.join("\n")
   ARGV.shift
-  p res
-  [les_cours, nil] # A MODIFIER/COMPLETER!
+  res = res.empty? ? nil : res << "\n"
+  [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
 def desactiver( les_cours )
@@ -303,11 +301,7 @@ def prealables( les_cours )
       i += 1
     end
   end
-  res = res.sort.uniq
-  # p res.class
-  p res
-  # res = res.join(", ") + "\n"
-  # res = res.split(',')
+  res = res.empty? ? nil : res.sort.uniq.join("\n") << "\n"
   [les_cours, res] # A MODIFIER/COMPLETER!
 end
 

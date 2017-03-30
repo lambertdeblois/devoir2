@@ -1,7 +1,7 @@
-INF1120,Programmation I,3,,ACTIF
-INF1130,Mathematiques pour informaticien,3,,ACTIF
-INF2120,Programmation II,3,INF1120,ACTIF
-INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,ACTIF
+INF1120,Programmation I,3,,INACTIF
+INF1130,Mathematiques pour informaticien,3,,INACTIF
+INF2120,Programmation II,3,INF1120,INACTIF
+INF3105,Structures de donnees et algorithmes,3,INF1130:INF2120,INACTIF
 INF3135,Construction et maintenance de logiciels,3,INF1120,ACTIF
 INF4100,Analyse d'algorithmes,3,INF3135:INF3105,ACTIF
 INF7341,Structures de donnees,3,INF3105,ACTIF

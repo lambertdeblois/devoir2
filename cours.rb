@@ -64,6 +64,8 @@ class Cours
                     prealables.join(separateur_prealables)
                   when "A"
                     actif? ? CoursTexte::ACTIF : CoursTexte::INACTIF
+                  else
+                    raise ArgumentError
                 end
         attribut_ok = format(specification.sub(specification[-1], "s"), attribut)
         le_format = le_format.gsub(specification, attribut_ok)
