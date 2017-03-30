@@ -186,19 +186,12 @@ def ajouter( les_cours )
   copie_les_cours = les_cours.dup
   bon_cours = Array.new
   res.each do |ligne|
-    # formatage pour pouvoir creer le cours
-    ligne = ligne.gsub(/ +["'](.+)["'] +([0-9]+)/, ',\1,\2,')
-    ligne = ligne.gsub(/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ':\1')
-    ligne = ligne.gsub(/ *:/, ':')
-    ligne = ligne.gsub(/,:/, ',')
     ligne = ligne + ",ACTIF\n"
-    ligne = ligne.gsub(/(,[0-9])(,ACTIF\n)/, '\1,\2')
-    # creer le cour avec la ligne
+    subs = [[/ +["'](.+)["'] +([0-9]+)/, ',\1,\2,'], [/ ([A-Z]{3}[0-9]{3}[A-Z0-9])/, ':\1'], [/ *:/, ':'], [/,:/, ','], [/(,[0-9])(,ACTIF\n)/, '\1,\2']]
+    subs.each { |x| ligne.gsub!(x[0], x[1])}
     cour = CoursTexte.creer_cours( ligne )
-    # check si le cour existe deja
     resultat = les_cours.find { |cours| cours.sigle.to_s == cour.sigle.to_s }
     erreur "meme sigle existe" if resultat
-    # check si les prealables existent et sont actifs
     cour.prealables.each do |prea|
       resultat = copie_les_cours.find { |cours| cours.sigle.to_s == prea.to_s && cours.actif? }
       erreur "Prealable invalide #{prea}" unless resultat
