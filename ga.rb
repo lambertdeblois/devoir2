@@ -233,32 +233,28 @@ def supprimer( les_cours )
 
   while ARGV.length != 0 do
     erreur "Format incorrect #{ARGV[0]}" unless ARGV[0] =~ Regexp.new(Motifs::SIGLE)
-    res = les_cours.find { |l| l.sigle.to_s =~ /#{ARGV[0]}/ }
-    erreur "Aucun cours #{ARGV[0]}" unless res
+    res = get_cour( ARGV[0], les_cours)
     res = Array(res)
     les_cours = les_cours - res
-    ARGV.shift
   end
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
 def trouver( les_cours )
   res = les_cours.select{ |cour| cour.actif? }
-  if ARGV[0] =~ Regexp.new(Motifs::AVEC_INACTIFS)
-    res = les_cours
-    ARGV.shift
-  end
-  if ARGV[0] =~ Regexp.new(Motifs::CLE_TRI)
-    cle_tri = ARGV[0].partition('=').last
-    ARGV.shift
-  end
-  if ARGV[0] =~ Regexp.new(Motifs::FORMAT)
-    le_format = ARGV[0].partition('=').last
-    ARGV.shift
-  end
   sep = CoursTexte::SEPARATEUR_PREALABLES
-  if ARGV[0] =~ Regexp.new(Motifs::SEP)
-    sep = ARGV[0].partition('=').last
+  while ARGV.length > 1 do
+    if ARGV[0] =~ Regexp.new(Motifs::AVEC_INACTIFS)
+      res = les_cours
+    elsif ARGV[0] =~ Regexp.new(Motifs::CLE_TRI)
+      cle_tri = ARGV[0].partition('=').last
+    elsif ARGV[0] =~ Regexp.new(Motifs::FORMAT)
+      le_format = ARGV[0].partition('=').last
+    elsif ARGV[0] =~ Regexp.new(Motifs::SEP)
+      sep = ARGV[0].partition('=').last
+    else
+      erreur "Argument en trop"
+    end
     ARGV.shift
   end
   res = res.select { |cour| /#{ARGV[0]}/i =~ (cour.to_s) }
@@ -270,27 +266,21 @@ def trouver( les_cours )
 end
 
 def desactiver( les_cours )
-  res = les_cours.find { |l| l.sigle.to_s =~ /#{ARGV[0]}/ }
-  erreur "Aucun cours #{ARGV[0]}" unless res
+  res = get_cour( ARGV[0], les_cours)
   res.desactiver
-  ARGV.shift
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
 def reactiver( les_cours )
-  res = les_cours.find { |l| l.sigle.to_s =~ /#{ARGV[0]}/ }
-  erreur "Aucun cours #{ARGV[0]}" unless res
+  res = get_cour( ARGV[0], les_cours)
   res.activer
-  ARGV.shift
   [les_cours, nil]
 end
 
 def prealables( les_cours )
   (tous = ARGV.shift) if ARGV[0] =~ Regexp.new(Motifs::TOUS)
-  res = les_cours.find { |cour| cour.sigle.to_s == ARGV[0] }
-  erreur "Aucun cours #{ARGV[0]}" unless res
+  res = get_cour(ARGV[0], les_cours)
   res = res.prealables.map{ |prealable| prealable.to_s }
-  ARGV.shift
 
   if tous
     i = 0
@@ -305,7 +295,12 @@ def prealables( les_cours )
   [les_cours, res] # A MODIFIER/COMPLETER!
 end
 
-
+def get_cour( cour, les_cours )
+  res = les_cours.find{ |cours| cours.sigle.to_s == cour }
+  erreur "Aucun cours #{cour}" unless res
+  ARGV.shift
+  res
+end
 #######################################################
 # Les differentes commandes possibles.
 #######################################################
