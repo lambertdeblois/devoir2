@@ -1,59 +1,123 @@
 ++ RESULTATS DES TESTS ++
--- ruby Tests/prealables_test.rb
-Run options: --seed 10832
+-- ruby Tests/ajouter_test.rb
+Run options: --seed 14797
 
 # Running:
 
-FFFF..
+................
 
-Finished in 0.297064s, 20.1977 runs/s, 50.4941 assertions/s.
+Finished in 0.910932s, 17.5644 runs/s, 97.7021 assertions/s.
+
+16 runs, 89 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/desactiver_reactiver_test.rb
+Run options: --seed 41060
+
+# Running:
+
+......
+
+Finished in 0.389501s, 15.4043 runs/s, 112.9649 assertions/s.
+
+6 runs, 44 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/init_test.rb
+Run options: --seed 1514
+
+# Running:
+
+........
+
+Finished in 0.455114s, 17.5780 runs/s, 105.4680 assertions/s.
+
+8 runs, 48 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/lister_test.rb
+Run options: --seed 59172
+
+# Running:
+
+.........
+
+Finished in 0.518956s, 17.3425 runs/s, 75.1508 assertions/s.
+
+9 runs, 39 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/nb_credits_test.rb
+Run options: --seed 38939
+
+# Running:
+
+...
+
+Finished in 0.169986s, 17.6486 runs/s, 76.4771 assertions/s.
+
+3 runs, 13 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/prealables_test.rb
+Run options: --seed 62346
+
+# Running:
+
+..FFFF
+
+Finished in 0.340429s, 17.6248 runs/s, 44.0620 assertions/s.
 
   1) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
-Expected: ["INF1130", "INF2120"]
-  Actual: [nil]
-
-
-  2) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
-Expected [nil] to be empty.
-
-
-  3) Failure:
-GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120", "INF1130", "INF2120"]
-+[nil]
-
-
-
-  4) Failure:
 GestionAcademique::prealables::banque de cours avec plusieurs cours dont plusieurs prealables indirects#test_0001_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
 @@ -1 +1 @@
 -["INF1120", "INF1130", "INF2120", "INF3105", "INF3135", "INF4100", "INF7341"]
-+[nil]
++["[\"INF1120\", \"INF1130\", \"INF2120\", \"INF3105\", \"INF3135\", \"INF4100\", \"INF7341\"]", nil]
 
 
-6 runs, 15 assertions, 4 failures, 0 errors, 0 skips
--- ruby Tests/trouver_test.rb
-Run options: --seed 13474
 
-# Running:
+  2) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0001_retourne rien lorsqu'aucun prealable [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:120]:
+Expected ["[]", nil] to be empty.
 
-FFFFFFFF..
 
-Finished in 0.473367s, 21.1253 runs/s, 42.2505 assertions/s.
-
-  1) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+  3) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0002_retourne les prealables directs, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
 @@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
+-["INF1130", "INF2120"]
++["[\"INF1130\", \"INF2120\"]", nil]
+
+
+
+  4) Failure:
+GestionAcademique::prealables::banque de cours avec plusieurs cours#test_0003_retourne tous les prealables, directs et indirects, en ordre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120", "INF1130", "INF2120"]
++["[\"INF1120\", \"INF1130\", \"INF2120\"]", nil]
+
+
+6 runs, 15 assertions, 4 failures, 0 errors, 0 skips
+-- ruby Tests/supprimer_test.rb
+Run options: --seed 34995
+
+# Running:
+
+......
+
+Finished in 0.328719s, 18.2527 runs/s, 109.5159 assertions/s.
+
+6 runs, 36 assertions, 0 failures, 0 errors, 0 skips
+-- ruby Tests/trouver_test.rb
+Run options: --seed 63155
+
+# Running:
+
+...FFFFFFF
+
+Finished in 0.535961s, 18.6581 runs/s, 39.1820 assertions/s.
+
+  1) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
 +[]
 
 
@@ -69,46 +133,16 @@ GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0002_trouv
 
 
   3) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
-+[]
-
-
-
-  4) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0006_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de titre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["MAT3140? \"Algebre et logique\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF1120 \"Programmation I\" ()", "INF2120 \"Programmation II\" (INF1120)"]
-+[]
-
-
-
-  5) Failure:
-GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0001_trouve toutes les lignes avec un caractere quelconque [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
---- expected
-+++ actual
-@@ -1 +1 @@
--["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "INF3105 \"Structures de donnees et algorithmes\" (INF1130:INF2120)", "INF3135 \"Construction et maintenance de logiciels\" (INF1120)"]
-+[]
-
-
-
-  6) Failure:
 GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0004_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
 @@ -1 +1 @@
 -["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
-+[]
++["[#<Cours:0xXXXXXX @sigle=:MAT3140, @titre=\"Algebre et logique\", @nb_credits=3, @prealables=[], @actif=false>, #<Cours:0xXXXXXX @sigle=:INF1120, @titre=\"Programmation I\", @nb_credits=3, @prealables=[], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF1130, @titre=\"Mathematiques pour informaticien\", @nb_credits=3, @prealables=[], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF2120, @titre=\"Programmation II\", @nb_credits=3, @prealables=[:INF1120], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF3105, @titre=\"Structures de donnees et algorithmes\", @nb_credits=3, @prealables=[:INF1130, :INF2120], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF3135, @titre=\"Construction et maintenance de logiciels\", @nb_credits=3, @prealables=[:INF1120], @actif=true>]"]
 
 
 
-  7) Failure:
+  4) Failure:
 GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affiche tous les cours selon le format indique [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
 --- expected
 +++ actual
@@ -118,8 +152,33 @@ GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0007_affic
 
 
 
-  8) Failure:
-GestionAcademique::trouver#test_0002_retourne rien lorsque fichier vide [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:121]:
-Expected ["*** Erreur: Argument(s) en trop: '.'", ""] to be empty.
+  5) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0003_trouve les lignes matchant une chaine specifique mais parmi les actifs seulement [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)"]
++[]
 
-10 runs, 20 assertions, 8 failures, 0 errors, 0 skips
+
+
+  6) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0006_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de titre [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["MAT3140? \"Algebre et logique\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF1120 \"Programmation I\" ()", "INF2120 \"Programmation II\" (INF1120)"]
++["[#<Cours:0xXXXXXX @sigle=:MAT3140, @titre=\"Algebre et logique\", @nb_credits=3, @prealables=[], @actif=false>, #<Cours:0xXXXXXX @sigle=:INF1120, @titre=\"Programmation I\", @nb_credits=3, @prealables=[], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF1130, @titre=\"Mathematiques pour informaticien\", @nb_credits=3, @prealables=[], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF2120, @titre=\"Programmation II\", @nb_credits=3, @prealables=[:INF1120], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF3105, @titre=\"Structures de donnees et algorithmes\", @nb_credits=3, @prealables=[:INF1130, :INF2120], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF3135, @titre=\"Construction et maintenance de logiciels\", @nb_credits=3, @prealables=[:INF1120], @actif=true>]"]
+
+
+
+  7) Failure:
+GestionAcademique::trouver::banque de cours avec plusieurs cours#test_0005_trouve les lignes matchant une chaine specifique parmi toutes y compris les inactifs en ordre de sigle [/home/lambert/uni/inf600a/devoir/GestionAcademiqueRuby/Tests/test_helper.rb:128]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-["INF1120 \"Programmation I\" ()", "INF1130 \"Mathematiques pour informaticien\" ()", "INF2120 \"Programmation II\" (INF1120)", "MAT3140? \"Algebre et logique\" ()"]
++["[#<Cours:0xXXXXXX @sigle=:MAT3140, @titre=\"Algebre et logique\", @nb_credits=3, @prealables=[], @actif=false>, #<Cours:0xXXXXXX @sigle=:INF1120, @titre=\"Programmation I\", @nb_credits=3, @prealables=[], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF1130, @titre=\"Mathematiques pour informaticien\", @nb_credits=3, @prealables=[], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF2120, @titre=\"Programmation II\", @nb_credits=3, @prealables=[:INF1120], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF3105, @titre=\"Structures de donnees et algorithmes\", @nb_credits=3, @prealables=[:INF1130, :INF2120], @actif=true>, #<Cours:0xXXXXXX @sigle=:INF3135, @titre=\"Construction et maintenance de logiciels\", @nb_credits=3, @prealables=[:INF1120], @actif=true>]"]
+
+
+10 runs, 21 assertions, 7 failures, 0 errors, 0 skips

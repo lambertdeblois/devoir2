@@ -19,6 +19,7 @@ module Motifs
   SEP = %r{--separateur_prealables\s*=.+}
   AVEC_INACTIFS = %r{--avec_inactifs}
   TOUS = %r{--tous}
+  CLE_TRI = %r{--cle_tri\s*=.+}
 
   # Motif pour un cours complet
   COURS = %r{

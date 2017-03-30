@@ -243,6 +243,31 @@ def supprimer( les_cours )
 end
 
 def trouver( les_cours )
+  if ARGV[0] =~ Regexp.new(Motifs::AVEC_INACTIFS)
+    res = les_cours
+    ARGV.shift
+  else
+    res = les_cours.select{ |cour| cour.actif? }
+  end
+  if ARGV[0] =~ Regexp.new(Motifs::CLE_TRI)
+    cle_tri = ARGV[0].partition('=').last
+    ARGV.shift
+  end
+  if ARGV[0] =~ Regexp.new(Motifs::FORMAT)
+    le_format = ARGV[0].partition('=').last
+    ARGV.shift
+  end
+  sep = CoursTexte::SEPARATEUR_PREALABLES
+  if ARGV[0] =~ Regexp.new(Motifs::SEP)
+    sep = ARGV[0].partition('=').last
+    ARGV.shift
+  end
+
+  res = res.select { |cour| /#{ARGV[0]}/.match(cour.to_s) }
+  # faire le sort
+  res = res.map { |cour| cour.to_s(le_format, sep) }.join("\n") << "\n"
+  ARGV.shift
+  p res
   [les_cours, nil] # A MODIFIER/COMPLETER!
 end
 
@@ -279,7 +304,7 @@ def prealables( les_cours )
     end
   end
   res = res.sort.uniq
-#  p res.class
+  # p res.class
   p res
   # res = res.join(", ") + "\n"
   # res = res.split(',')
